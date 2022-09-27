@@ -4,29 +4,53 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/9f3880ef33.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <title>Thor's Personal Portfolio</title>
   </head>
   <body>
-    <nav id="navbar"></nav>
+    <nav id="navbar">
+      <ul class="navList">
+        <li>
+          <a href="#welcome-section">About</a>
+        </li>
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
     <section id="welcome-section">
       <h1>Hi, I'm Thor!</h1>
     </section>
     <section id="projects">
       <a href="#" class="project-tile">
         <figure>
-          <img
-            src="/images/chris-hemsworth-as-thor.png"
-          />
+          <img src="/images/TechInterest-001.png" />
           <figcaption>Thor: Love and Thunder</figcaption>
         </figure>
       </a>
     </section>
     <section id="contact">
-
+      <div class="contact-header">
+        <h2>Contact me please... I'm starving</h2>
+        <p>I've got some serious web development skills!</p>
+      </div>
+      <div class="contact-links">
+        <a href="#" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
+        <a id="profile-link" href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Call me</a>
+      </div>
     </section>
     <footer>
-        <p>&copy; Thor Anderson Designs, 2022</p>
+      <p>&copy; Thor Anderson Designs, 2022</p>
     </footer>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>

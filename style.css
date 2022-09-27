@@ -1,6 +1,40 @@
 * {
     margin: 0;
+    padding: 0;
 }
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #A5A692;
+    position: fixed;
+    width: 100%;
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+}
+
+.navList li {
+
+}
+
+.navList a {
+    text-decoration: none;
+    color: #fefefe;
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .navList a:hover {
+    background: #BFB78F;
+  }
 
 #welcome-section {
     display: flex;
@@ -9,7 +43,13 @@
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: #555555;
+    background-color: #025E73;
+}
+
+#projects {
+    display: flex;
+    justify-content: center;
+    background-color: #F2E3D5;
 }
 
 .project-tile {
@@ -18,13 +58,13 @@
 
 figure {
     margin: 0;
-    width: 200px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
 }
 
 figure img {
-    width: 200px;
+    max-width: 300px;
 }
 
 figcaption {
@@ -32,4 +72,25 @@ figcaption {
     color: #fefefe;
     text-align: center;
     padding: 10px 0px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #012E40;
+    color: #cccccc;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #fefefe;
+}
+
+footer {
+    text-align: center;
+    background-color: #A5A692;
+    padding: 1rem;
 }
