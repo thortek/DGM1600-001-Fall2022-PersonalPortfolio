@@ -7,6 +7,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 #navbar {
     display: flex;
     justify-content: flex-end;
@@ -28,7 +33,7 @@ body {
     text-decoration: none;
     color: #fefefe;
     display: block;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     padding: 1rem;
   }
   
@@ -84,9 +89,16 @@ figcaption {
     color: #cccccc;
 }
 
-.contact-links a {
+.contact-link {
+    display: inline-block;
+    padding: 1rem;
     text-decoration: none;
     color: #fefefe;
+    transition: transform 0.3s ease-out;
+}
+
+.contact-link:hover {
+    transform: translateY(8px);
 }
 
 footer {
@@ -94,3 +106,13 @@ footer {
     background-color: #A5A692;
     padding: 1rem;
 }
+
+@media (max-width: 480px) {
+    body {
+        font-size: 70%;
+    }
+    #welcome-section {
+        background-color: #555555;
+        color: #fff;
+    }
+  }
