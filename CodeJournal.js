@@ -26,3 +26,46 @@ let myNum2 = 75.25
 "1" // is not a number! It is a string.
 "1" == 1 // evalutes to true because of type coercion and loose equality checking
 "1" === 1 // evaluates to false because this is strict equality checking
+
+// Boolean
+
+let myBool = false
+
+// need to look into "truthy" and "falsy" values
+
+// Arrays - hold sets of items of any data type
+
+let mySimpleArray = []  // legit, empty array notice the square brackets
+
+// ordering    0     1      2        3      4
+let myArray = [42, "Bob", myBool, ANSWER, true]
+
+myArray.length // handy property to find your array's length
+
+let firstItem = myArray[0]
+
+let lastItem = myArray[myArray.length - 1]
+
+// Objects
+
+let minObject = {} // the most minimal object possible
+
+let myCar = {
+    make: 'Chevrolet',
+    color: 'Bahama Green',
+    year: 1964,
+    vin: '2039840982039842LKJ'
+}
+
+myCar.color // accessing an object's property through simple dot notation
+myCar.numDoors = 2 // we can also simply add a property to an object using dot notation
+
+const anotherObject = { // objects can contain just about anything
+    wordz: ['foo', 'bar', 'baz'],
+    car: {
+        make: 'McLaren',
+        model: '720s',
+        topSpeed: '212mph'
+    },
+    awesomeness: true
+}

@@ -10,3 +10,14 @@ html {
 body {
     background-color: bisque;
 }
+
+p {
+    background-color: rgba(40, 40, 40, 0.5);
+    color: white;
+    margin: 2rem;
+    padding: 2rem;
+    font-size: x-large;
+    border-radius: 5%;
+    width: 20rem;
+    text-align: center;
+}
