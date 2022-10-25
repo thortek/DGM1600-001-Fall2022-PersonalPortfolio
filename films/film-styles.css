@@ -8,16 +8,19 @@ html {
 }
 
 body {
-    background-color: bisque;
+    background-color: #000;
 }
 
-p {
-    background-color: rgba(40, 40, 40, 0.5);
-    color: white;
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+figure {
     margin: 2rem;
-    padding: 2rem;
-    font-size: x-large;
-    border-radius: 5%;
-    width: 20rem;
-    text-align: center;
+}
+
+figcaption {
+    color: rgb(214, 246, 8)
 }
