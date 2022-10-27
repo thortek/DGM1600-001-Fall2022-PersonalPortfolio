@@ -79,3 +79,11 @@ function myFunction() { // this is a named function definition
 function sumTwoThings(thingOne, thingTwo) {
     return thingOne + thingTwo
 }
+
+// Functions are "first class objects" in JavaScript. This means they can be stored in variables. We can assign properties and methods to them. They can be passed as parameters in another function. They can be returned from another function.
+
+() => { } // this is the simple syntax of an (anonymous) arrow function
+
+const myArrowFunction = () => {
+    return "Some value"
+}
