@@ -63,3 +63,5 @@ function getLastNumber(url) {
   }
   return url.slice(start, end)
 }
+
+populateDOM(people)

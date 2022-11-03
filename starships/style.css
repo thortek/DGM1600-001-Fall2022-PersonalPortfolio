@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+}
+
+.shipViewer {
+    background-color: aqua;
+    height: 100vh;
+}
+
+.navList {
+    list-style-type: none;
+    margin: 1rem;
+}
+
+a {
+    text-decoration: none;
+    font-size: x-large;
+}
+
+li {
+    padding: .25rem;
+}
