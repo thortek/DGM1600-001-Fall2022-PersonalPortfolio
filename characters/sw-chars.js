@@ -1,4 +1,5 @@
 import { people } from '../data/people.js'
+import { removeChildren, getLastNumber } from '../utils/index.js'
 
 const header = document.querySelector('header')
 const main = document.querySelector('main')
@@ -34,9 +35,7 @@ header.appendChild(femaleCharsButton)
 header.appendChild(otherCharsButton)
 
 function populateDOM(characters) {
-  while (main.firstChild) { // remove all children before our forEach appends them all
-    main.removeChild(main.firstChild)
-  }
+  removeChildren(main)
   characters.forEach((person) => {
     let figure = document.createElement('figure')
     let figImage = document.createElement('img')
@@ -55,13 +54,6 @@ function populateDOM(characters) {
 
 // 'https://swapi.co/api/people/10/'
 
-function getLastNumber(url) {
-  let end = url.lastIndexOf('/')
-  let start = end - 2
-  if (url.charAt(start) === '/') {
-    start++
-  }
-  return url.slice(start, end)
-}
+
 
 populateDOM(people)
