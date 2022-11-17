@@ -10,12 +10,43 @@
 <body>
     <header>
     <h1> Welcome to my members of Congress page!</h1>
-    <button id="repsButton">Representatives</button>
-    <button id="senatorsButton">Senators</button>
-    <input type="radio" id="repubs" name="party">
-    <label for="repubs">Senate Republicans</label>
-    <input type="radio" id="demos" name="party">
-    <label for="demos">Senate Democrats</label>
+    <div>
+        <h3>The most senior member of congress is <span id="seniorMember"></span></h3>
+        <h3>The biggest vacationer in the entire congress is <span id="vacationer"></span></h3>
+    </div>
+    <fieldset>
+        <legend>Sort Congress Members:</legend>
+    
+        <div>
+          <input type="checkbox" id="repubs" name="repubs">
+          <label for="repubs">Republicans</label>
+        </div>
+    
+        <div>
+          <input type="checkbox" id="dems" name="dems">
+          <label for="dems">Democrats</label>
+        </div>
+    
+        <div>
+          <input type="checkbox" id="senate" name="senate">
+          <label for="senate">Senators</label>
+        </div>
+    
+        <div>
+          <input type="checkbox" id="house" name="house">
+          <label for="house">Representatives</label>
+        </div>
+    
+        <div>
+          <input type="checkbox" id="women" name="women">
+          <label for="women">Female</label>
+        </div>
+    
+        <div>
+          <input type="checkbox" id="men" name="men">
+          <label for="men">Male</label>
+        </div>
+    </fieldset>
 
 </header>
 <main>

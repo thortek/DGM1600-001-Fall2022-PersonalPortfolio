@@ -2,19 +2,26 @@ import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 import { removeChildren } from '../utils/index.js'
 
+const allCongressMembers = [...senators, ...representatives] // modern way to combine arrays
+
 const membersDiv = document.querySelector('.membersDiv')
 
-const repsButton = document.querySelector('#repsButton')
-const senatorsButton = document.querySelector('#senatorsButton')
+const houseButton = document.querySelector('#house')
+const senateButton = document.querySelector('#senate')
 
-repsButton.addEventListener('click', () => populateMembersDiv(simplifiedReps))
-senatorsButton.addEventListener('click', () => populateMembersDiv(simplifiedSenators))
+const seniorMemberSpan = document.querySelector('#seniorMember')
+const vacationerSpan = document.querySelector('#vacationer')
 
-const senateRepubsButton = document.querySelector('#repubs')
-senateRepubsButton.addEventListener('click', () => {
-    const simplifiedRepublicanSenators = simplifiedSenators.filter(member => member.party === 'R')
-    populateMembersDiv(simplifiedRepublicanSenators)
+const mostSeniorMember = simplifiedMembers(allCongressMembers).reduce((acc, member) => {
+    return acc.seniority > member.seniority ? acc : member
 })
+
+const biggestVacationer = simplifiedMembers(allCongressMembers).reduce((acc, member) => {
+    return acc.missedVotesPct > member.missedVotesPct ? acc : member
+})
+
+seniorMemberSpan.textContent = mostSeniorMember.name
+vacationerSpan.textContent = biggestVacationer.name
 
 function simplifiedMembers(memberArray) {
     return memberArray.map(member => {
@@ -26,7 +33,7 @@ function simplifiedMembers(memberArray) {
             gender: member.gender,
             party: member.party,
             imgURL: `https://www.govtrack.us/static/legislator-photos/${member.govtrack_id}-200px.jpeg`,
-            seniority: member.seniority,
+            seniority: +member.seniority,
             missedVotesPct: member.missed_votes_pct,
             loyaltyPct: member.votes_with_party_pct
         }
