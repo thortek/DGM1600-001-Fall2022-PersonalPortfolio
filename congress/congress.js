@@ -60,11 +60,14 @@ function populateMembersDiv(memberArray) {
         const scene = document.createElement('div')
         scene.className = 'scene'
         const card = document.createElement('div')
-        card.className = 'card__face card__face--front'
+        card.className = 'card'
         card.addEventListener('click', () => {
             console.log('You clicked?')
             card.classList.toggle('is-flipped')
         })
+
+        const cardFront = document.createElement('div')
+        cardFront.className = 'card__face card__face--front'
 
         const figure = document.createElement('figure')
         const figImg = document.createElement('img')
@@ -78,7 +81,8 @@ function populateMembersDiv(memberArray) {
 
         figure.appendChild(figImg)
         figure.appendChild(figCaption)
-        card.appendChild(figure)
+        cardFront.appendChild(figure)
+        card.appendChild(cardFront)
         card.appendChild(populateCardBack(member))
         scene.appendChild(card)
         membersDiv.appendChild(scene)
