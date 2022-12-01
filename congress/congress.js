@@ -84,6 +84,8 @@ function populateMembersDiv(memberArray) {
         scene.className = 'scene'
         const card = document.createElement('div')
         card.className = 'card'
+        if (member.party === 'R') card.className = 'card republican'
+        if(member.party === 'D') card.className = 'card democrat'
         card.addEventListener('click', () => {
             console.log('You clicked?')
             card.classList.toggle('is-flipped')

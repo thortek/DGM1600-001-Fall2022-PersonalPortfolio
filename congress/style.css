@@ -4,16 +4,31 @@
     box-sizing: border-box;
 }
 
+.filterArea {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  background-color: rgba(34, 78, 189, .2);
+}
+
+fieldset {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  
+}
+
 .membersDiv {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .scene {
     width: 200px;
-    height: 260px;
+    height: 270px;
     border: 1px solid #CCC;
-    margin: 40px 0;
+    margin: 2rem .25rem;
     perspective: 600px;
   }
 
@@ -38,10 +53,31 @@
   }
   
   .card__face--front {
-    background: red;
+    background: rgb(237, 232, 232);
   }
   
   .card__face--back {
     background: blue;
     transform: rotateY(180deg);
+  }
+
+  .republican {
+    border: 2px solid red;
+  }
+
+  .democrat {
+    border: 2px solid blue;
+  }
+
+  figcaption {
+    text-align: center;
+  }
+
+  footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(34, 78, 189, .6);
+    color: #EEE;
   }
