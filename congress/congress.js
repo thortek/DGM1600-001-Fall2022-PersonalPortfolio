@@ -6,9 +6,6 @@ const allCongressMembers = [...senators, ...representatives] // modern way to co
 
 const membersDiv = document.querySelector('.membersDiv')
 
-const houseButton = document.querySelector('#house')
-const senateButton = document.querySelector('#senate')
-
 const seniorMemberSpan = document.querySelector('#seniorMember')
 const vacationerSpan = document.querySelector('#vacationer')
 const loyalMemberList = document.querySelector('#loyalMembers')
@@ -33,6 +30,32 @@ mostLoyalMembers.forEach(member => {
 
 seniorMemberSpan.textContent = mostSeniorMember.name
 vacationerSpan.textContent = `${biggestVacationer.name} ${biggestVacationer.missedVotesPct}`
+    
+/* Section for configuring sorting and filters */
+const allInputs = document.querySelectorAll('input')
+allInputs.forEach(input => input.addEventListener('change', () => configurator()))
+
+function configurator() {
+    let configuredArray = []
+    const checkedInputs = document.querySelectorAll('input:checked')
+    const checkedIds = []
+    checkedInputs.forEach(item => checkedIds.push(item.id))
+    //console.log(checkedIds)
+
+    if (checkedIds.includes('senate')) configuredArray = [...configuredArray, ...simplifiedMembers(senators)]
+    if (checkedIds.includes('house')) configuredArray = [...configuredArray, ...simplifiedMembers(representatives)]
+
+    if (checkedIds.includes('women')) configuredArray = [...configuredArray.filter(member => member.gender === 'F')]
+    if (checkedIds.includes('men')) configuredArray = [...configuredArray.filter(member => member.gender === 'M')]
+
+    if (checkedIds.includes('dems')) configuredArray = [...configuredArray.filter(member => member.party === 'D')]
+    if (checkedIds.includes('repubs')) configuredArray = [...configuredArray.filter(member => member.party === 'R')]
+
+    //console.log(configuredArray)
+    populateMembersDiv(configuredArray)
+}
+
+/* End configuration section */
 
 function simplifiedMembers(memberArray) {
     return memberArray.map(member => {
@@ -99,4 +122,4 @@ function populateCardBack(member) {
     return cardBack
 }
 
-populateMembersDiv(simplifiedSenators)
+// populateMembersDiv(simplifiedSenators)

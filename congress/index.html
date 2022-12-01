@@ -17,17 +17,6 @@
     </div>
     <fieldset>
         <legend>Sort Congress Members:</legend>
-    
-        <div>
-          <input type="checkbox" id="repubs" name="repubs">
-          <label for="repubs">Republicans</label>
-        </div>
-    
-        <div>
-          <input type="checkbox" id="dems" name="dems">
-          <label for="dems">Democrats</label>
-        </div>
-    
         <div>
           <input type="checkbox" id="senate" name="senate">
           <label for="senate">Senators</label>
@@ -38,15 +27,30 @@
           <label for="house">Representatives</label>
         </div>
     
-        <div>
-          <input type="checkbox" id="women" name="women">
-          <label for="women">Female</label>
-        </div>
-    
-        <div>
-          <input type="checkbox" id="men" name="men">
-          <label for="men">Male</label>
-        </div>
+    </fieldset>
+    <fieldset>
+      <legend>Filter by Party:</legend>
+      <div>
+        <input type="radio" id="repubs" name="party">
+        <label for="repubs">Republicans</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="dems" name="party">
+        <label for="dems">Democrats</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Filter by Gender:</legend>
+      <div>
+        <input type="radio" id="women" name="gender">
+        <label for="women">Female</label>
+      </div>
+  
+      <div>
+        <input type="radio" id="men" name="gender">
+        <label for="men">Male</label>
+      </div>
     </fieldset>
 
 </header>
