@@ -15,8 +15,16 @@ fieldset {
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
-  
 }
+
+.resetButton {
+  border-radius: 10px;
+  padding: .25rem;
+  width: 100%;
+  margin-top: .5rem;
+}
+
+
 
 .membersDiv {
     display: flex;
@@ -27,9 +35,10 @@ fieldset {
 .scene {
     width: 200px;
     height: 270px;
-    border: 1px solid #CCC;
+    /* border: 1px solid #CCC; */
     margin: 2rem .25rem;
     perspective: 600px;
+    border-radius: 10px;
   }
 
   .card {
@@ -39,6 +48,7 @@ fieldset {
     transform-style: preserve-3d;
     cursor: pointer;
     position: relative;
+    border-radius: 10px;
   }
   
   .card.is-flipped {
@@ -53,24 +63,41 @@ fieldset {
   }
   
   .card__face--front {
-    background: rgb(237, 232, 232);
+    /* background: rgb(237, 232, 232); */
+    border-radius: 10px;
   }
   
   .card__face--back {
-    background: blue;
+    background: linear-gradient(#e66465, #5a0101);
     transform: rotateY(180deg);
+    border-radius: 10px;
+  }
+
+  .details {
+    padding: .5rem;
   }
 
   .republican {
-    border: 2px solid red;
+    background-color: rgb(237, 77, 77);
   }
 
   .democrat {
-    border: 2px solid blue;
+    background-color: rgb(102, 102, 247);
+  }
+
+  figure {
+    border-radius: 10px;
+  }
+
+  figure img {
+    border-radius: 10px;
   }
 
   figcaption {
     text-align: center;
+    font-weight: 700;
+    color: #FFF;
+    font-size: larger;
   }
 
   footer {
