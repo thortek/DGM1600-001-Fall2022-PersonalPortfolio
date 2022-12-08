@@ -176,4 +176,4 @@ function populateCardBack(member) {
   return cardBack
 }
 
-// populateMembersDiv(simplifiedSenators)
+populateMembersDiv(simplifiedMembers(allCongressMembers))
