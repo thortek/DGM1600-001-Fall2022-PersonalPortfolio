@@ -49,6 +49,7 @@ html {
 
 #projects {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: #F2E3D5;
 }
