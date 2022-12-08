@@ -13,15 +13,15 @@ const loyalMemberList = document.querySelector('#loyalMembers')
 const partyReset = document.querySelector('#partyReset')
 partyReset.addEventListener('click', () => {
   const partyButtons = document.querySelectorAll('input[name="party"]')
-    partyButtons.forEach((button) => (button.checked = false))
-    configurator()
+  partyButtons.forEach((button) => (button.checked = false))
+  configurator()
 })
 const genderReset = document.querySelector('#genderReset')
 genderReset.addEventListener('click', () => {
-    const genderButtons = document.querySelectorAll('input[name="gender"]')
-    genderButtons.forEach((button) => (button.checked = false))
-    configurator()
-  })
+  const genderButtons = document.querySelectorAll('input[name="gender"]')
+  genderButtons.forEach((button) => (button.checked = false))
+  configurator()
+})
 
 const mostSeniorMember = simplifiedMembers(allCongressMembers).reduce(
   (acc, member) => {
@@ -48,7 +48,12 @@ mostLoyalMembers.forEach((member) => {
 })
 
 seniorMemberSpan.textContent = mostSeniorMember.name
+const seniorMemberImg = document.querySelector('#seniorMemberImg')
+seniorMemberImg.src = mostSeniorMember.imgURL
+
 vacationerSpan.textContent = `${biggestVacationer.name} ${biggestVacationer.missedVotesPct}`
+const vacationerImg = document.querySelector('#vacationerImg')
+vacationerImg.src = biggestVacationer.imgURL
 
 /* Section for configuring sorting and filters */
 const allInputs = document.querySelectorAll('input')
@@ -107,9 +112,9 @@ function simplifiedMembers(memberArray) {
       imgURL: `https://www.govtrack.us/static/legislator-photos/${member.govtrack_id}-200px.jpeg`,
       seniority: +member.seniority,
       missedVotesPct: member.missed_votes_pct,
-        loyaltyPct: member.votes_with_party_pct,
-        state: member.state,
-      rank: member.state_rank
+      loyaltyPct: member.votes_with_party_pct,
+      state: member.state,
+      rank: member.state_rank,
     }
   })
 }
@@ -136,9 +141,9 @@ function populateMembersDiv(memberArray) {
 
     const figure = document.createElement('figure')
     const figImg = document.createElement('img')
-      const figCaption = document.createElement('figcaption')
-      if (member.party === 'R') figCaption.className = 'republican'
-      if (member.party === 'D') figCaption.className = 'democrat'
+    const figCaption = document.createElement('figcaption')
+    if (member.party === 'R') figCaption.className = 'republican'
+    if (member.party === 'D') figCaption.className = 'democrat'
 
     figImg.src = member.imgURL
     figImg.addEventListener(
@@ -161,18 +166,23 @@ function populateMembersDiv(memberArray) {
 function populateCardBack(member) {
   const cardBack = document.createElement('div')
   cardBack.className = 'card__face card__face--back'
-    const details = document.createElement('h4')
-    details.className = 'details'
-    details.textContent = `Date of Birth: ${member.dateOfBirth}`
+  const details = document.createElement('h4')
+  details.className = 'details'
+  details.textContent = `Date of Birth: ${member.dateOfBirth}`
 
-    const membersState = document.createElement('h3')
-    membersState.textContent = `State: ${member.state}`
+  const membersState = document.createElement('h3')
+  membersState.textContent = `State: ${member.state}`
+  const stateIcon = document.createElement('img')
+  stateIcon.src = `../images/SVG/${member.state}.svg`
+  
+  cardBack.appendChild(details)
+  cardBack.appendChild(membersState)
+  if (member.rank) {
     const memberRank = document.createElement('h3')
     memberRank.textContent = `Rank: ${member.rank[0].toUpperCase()}${member.rank.slice(1)}`
-
-    cardBack.appendChild(details)
-    cardBack.appendChild(membersState)
     cardBack.appendChild(memberRank)
+  }
+  cardBack.appendChild(stateIcon)
   return cardBack
 }
 
